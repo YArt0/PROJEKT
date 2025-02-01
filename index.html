@@ -22,19 +22,6 @@
             color: white;
         }
 
-        .main-title {
-            font-size: 2.5rem;
-            color: black;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            color: black;
-            margin-bottom: 20px;
-        }
-
         table {
             width: 100%;
             margin: 20px 0;
@@ -57,6 +44,10 @@
             margin: 0 auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, color 0.3s;
+        }
+
+        h2 {
+            color: black; /* Nagłówek w standardzie czarny */
         }
 
         p {
@@ -172,21 +163,16 @@
             color: #FFD700;
         }
 
-        /* Ustawienia dla nagłówków w trybie jasnym i ciemnym */
-        body:not(.dark-mode) h2, body.dark-mode h2 {
-            color: black; /* Nagłówek zawsze czarny */
+        body:not(.dark-mode) h2 {
+            color: black; /* Ustawienie koloru nagłówka na czarny w trybie jasnym */
         }
 
-        /* Zmniejszenie marginesów przy tabeli i treści */
-        .content p, .content ul {
-            margin: 0 0 10px 0;
-        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 class="main-title">Studenckie koła naukowe tworzą innowacje</h1>
+    <h1>Studenckie koła naukowe tworzą innowacje</h1>
     <h2>Monitorowanie zagrożeń w środowisku pracy hodowcy w świetle przepisów bhp oraz ochrony środowiska</h2>
 </header>
 
@@ -255,6 +241,7 @@
             <li>Pracownik musi być wyposażony w odpowiednią odzież ochronną, w tym buty robocze, rękawice, odzież roboczą oraz środki ochrony indywidualnej.</li>
         </ul>
     </div>
+
 </div>
 
 <!-- Kontrolki do zmiany ustawień -->
