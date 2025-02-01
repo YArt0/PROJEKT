@@ -12,6 +12,7 @@
             padding: 0;
             background-color: #f4f4f4;
             padding-bottom: 50px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
@@ -42,10 +43,11 @@
             max-width: 1200px;
             margin: 0 auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
         }
 
         h2 {
-            color: #FFF;
+            color: #0056b3;
         }
 
         p {
@@ -238,11 +240,12 @@
 
 </div>
 
-<!-- Kontrolki do czytania tekstu -->
+<!-- Kontrolki do zmiany ustawień -->
 <div class="controls">
-    <button onclick="toggleSpeech()">Start/Pause</button>
+    <button onclick="toggleSpeech()">Start/Pause Odczytu</button>
     <button onclick="restartSpeech()">Wznów Odczyt</button>
     <button onclick="toggleMode()">Tryb ciemny / wysoki kontrast</button>
+    <button onclick="changeTextSize()">Zmień rozmiar tekstu</button>
 </div>
 
 <!-- Stopka -->
@@ -253,7 +256,8 @@
 <script>
     let isSpeaking = false;
     let speech = new SpeechSynthesisUtterance();
-    speech.lang = 'pl-PL'; // Ustawienie języka na polski
+    let textSize = 1; // Początkowy rozmiar tekstu
+    speech.lang = 'pl-PL';
     const synth = window.speechSynthesis;
 
     function toggleSpeech() {
@@ -268,7 +272,7 @@
     function restartSpeech() {
         if (synth.speaking || isSpeaking) {
             synth.cancel();
-            speech.text = document.querySelector('.content').innerText; // Odczyt treści
+            speech.text = document.querySelector('.content').innerText;
             synth.speak(speech);
             isSpeaking = true;
         }
@@ -279,9 +283,12 @@
         document.body.classList.toggle('high-contrast');
     }
 
-    // Inicjalizacja tekstu do odczytu
-    speech.text = document.querySelector('.content').innerText;
+    function changeTextSize() {
+        textSize = textSize === 1 ? 1.2 : 1;  // Zwiększ o 0.2 lub wróć do normalnego
+        document.body.style.fontSize = `${textSize}em`;
+    }
 
+    speech.text = document.querySelector('.content').innerText;
 </script>
 
 </body>
