@@ -12,7 +12,6 @@
             padding: 0;
             background-color: #f4f4f4;
             padding-bottom: 50px; /* Miejsce na stopkę */
-            font-size: 1rem; /* Standardowy rozmiar tekstu */
         }
 
         header {
@@ -53,7 +52,6 @@
             margin-bottom: 15px;
         }
 
-        /* Panel po prawej stronie */
         .controls {
             position: fixed;
             right: 10px;
@@ -79,21 +77,14 @@
             background-color: #003b72;
         }
 
-        /* Styl dla tytułów rozdziałów */
         h3 {
             color: #0056b3;
         }
 
-        /* Styl dla list */
         ul {
             margin-left: 20px;
         }
 
-        .section {
-            margin-bottom: 30px;
-        }
-
-        /* Styl dla przypiętej stopki na dole */
         .footer {
             position: fixed;
             bottom: 0;
@@ -105,6 +96,47 @@
             font-size: 14px;
         }
 
+        /* Tryb ciemny */
+        body.dark-mode {
+            background-color: #333;
+            color: #FFF;
+        }
+
+        body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+            color: #FFF;
+        }
+
+        body.dark-mode .content {
+            background-color: #444;
+        }
+
+        body.dark-mode .footer {
+            background-color: #222;
+        }
+
+        body.high-contrast {
+            background-color: #000;
+            color: #FFF;
+        }
+
+        body.high-contrast .footer {
+            background-color: #000;
+            color: #FFF;
+        }
+
+        body.high-contrast .content {
+            background-color: #000;
+        }
+
+        body.high-contrast .controls {
+            background-color: #000;
+            color: #FFF;
+        }
+
+        body.high-contrast .controls button {
+            background-color: #FFD700;
+            color: #000;
+        }
     </style>
 </head>
 <body>
@@ -154,7 +186,7 @@
             <li>Zachowaj ostrożność podczas obsługi zwierząt, szczególnie rozpłodników i w okresie rui.</li>
             <li>Zapewnij zwierzętom odpowiednią ilość paszy i wody zgodnie z ich zapotrzebowaniem.</li>
             <li>Regularnie monitoruj mikroklimat pomieszczeń hodowlanych.</li>
-            <li>Zgłaszaj niezwłocznie zaobserwowane nieprawidłowości, szczególnie w kwestiach profilaktyki i leczenia chorób zwierząt.</li>
+            <li>Zgłaszaj niezwłocznie zaobserwowane nieprawidłowości szczególnie w kwestiach profilaktyki i leczenia chorób zwierząt.</li>
             <li>W przypadku wystąpienia choroby zakaźnej u zwierząt należy powiadomić służby weterynaryjne.</li>
             <li>Dbaj o aktualne prowadzenie niezbędnej dokumentacji hodowlanej.</li>
         </ul>
@@ -167,46 +199,20 @@
             <li>Utrzymuj czystość w obiektach hodowlanych, w tym systemów kanalizacyjnych.</li>
             <li>Zwierzęta padłe należy przeznaczyć do utylizacji zgodnie z zaleceniami służb weterynaryjnych.</li>
         </ul>
-        <p>Pamiętaj, że przestrzeganie tej instrukcji jest kluczowe dla utrzymania optymalnego stanu sanitarnego fermy oraz minimalizacji ryzyka związanego z narażeniem hodowcy na czynniki biologiczne. Pracownik ma obowiązek przestrzegać procedur higienicznych i bezpieczeństwa, a wszelkie wątpliwości czy incydenty powinny być natychmiast zgłaszane przełożonemu i odpowiednim służbom!</p>
-        <p><strong>PAMIĘTAJ</strong><br>
-        Żadne, nawet najlepiej sformułowane zasady bezpieczeństwa nie mogą przewidzieć wszystkich możliwych do zaistnienia sytuacji. Zasady bezpieczeństwa nie zastępują wyobraźni i ostrożności!!!</p>
     </div>
 
-    <div class="section">
-        <h3>V. UWAGI OGÓLNE</h3>
-        <ul>
-            <li>Pracownik zatrudniony na terenie fermy musi być odpowiednio przeszkolony w zakresie obsługi zwierząt oraz sprzętu używanego w fermie.</li>
-            <li>Przed przystąpieniem do pracy należy zapoznać się z instrukcją stanowiskową oraz regulaminem fermy.</li>
-            <li>Pracownik musi być wyposażony w odpowiednią odzież ochronną, w tym buty robocze, rękawice, odzież roboczą oraz środki ochrony osobistej.</li>
-        </ul>
-    </div>
+    <p>Pamiętaj, że przestrzeganie tej instrukcji jest kluczowe dla utrzymania optymalnego stanu sanitarnego fermy oraz minimalizacji ryzyka związanego z narażeniem hodowcy na czynniki biologiczne. Pracownik ma obowiązek przestrzegać procedur higienicznych i bezpieczeństwa, a wszelkie wątpliwości czy incydenty powinny być natychmiast zgłaszane przełożonemu i odpowiednim służbom!</p>
 
-    <div class="section">
-        <h3>VI. ZASADY BEZPIECZNEJ PRACY</h3>
-        <ul>
-            <li>Przed rozpoczęciem pracy: - Sprawdzenie stanu technicznego narzędzi i urządzeń. - Upewnienie się, że miejsce pracy jest odpowiednio oświetlone i uporządkowane. - Sprawdzenie, czy zwierzęta są spokojne i w dobrym stanie zdrowia.</li>
-            <li>Podczas pracy: - Zachowanie ostrożności przy kontaktach z bydłem, unikanie gwałtownych ruchów i hałasu. - Korzystanie z odpowiednich narzędzi i sprzętu zgodnie z ich przeznaczeniem. - Regularne przerwy na odpoczynek, szczególnie podczas pracy w trudnych warunkach. - Wykonywanie czynności zgodnie z instrukcjami i procedurami fermy.</li>
-            <li>Po zakończeniu pracy: - Wyłączenie i zabezpieczenie sprzętu. - Umycie i dezynfekcja rąk oraz narzędzi. - Uporządkowanie miejsca pracy. - Zgłaszanie wszelkich nieprawidłowości, usterek sprzętu lub problemów zdrowotnych zwierząt przełożonemu.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>VII. ZASADY POSTĘPOWANIA W SYTUACJACH AWARYJNYCH</h3>
-        <ul>
-            <li>W przypadku wypadku należy niezwłocznie powiadomić przełożonego oraz udzielić pierwszej pomocy poszkodowanemu.</li>
-            <li>W razie pożaru należy ewakuować się zgodnie z planem ewakuacji i powiadomić straż pożarną.</li>
-            <li>W przypadku wystąpienia choroby zakaźnej w stadzie, należy odizolować chore zwierzęta i powiadomić weterynarza.</li>
-        </ul>
-    </div>
-
+    <h3>PAMIĘTAJ</h3>
+    <p>Żadne nawet najlepiej sformułowane zasady bezpieczeństwa nie mogą przewidzieć wszystkich możliwych do zaistnienia sytuacji. Zasady bezpieczeństwa nie zastępują wyobraźni i ostrożności!!!</p>
 </div>
 
 <!-- Panel sterowania odczytem po prawej stronie -->
 <div class="controls">
-    <button tabindex="1" onclick="readText()">Odczytaj dokument</button>
-    <button tabindex="2" onclick="pauseSpeech()">Pauza</button>
-    <button tabindex="3" onclick="resumeSpeech()">Wznowienie</button>
-    <button tabindex="4" onclick="stopSpeech()">Stop</button>
+    <button onclick="readText()">Odczytaj dokument</button>
+    <button onclick="pauseSpeech()">Pauza</button>
+    <button onclick="resumeSpeech()">Wznowienie</button>
+    <button onclick="stopSpeech()">Stop</button>
     <br><br>
     <label for="rate">Tempo odczytu:</label>
     <input type="range" id="rate" min="0.1" max="2" step="0.1" value="1">
@@ -217,17 +223,17 @@
     <label for="volume">Głośność:</label>
     <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
     <span id="volume-value">1</span>
-
+    
     <br><br>
 
     <label for="textSize">Rozmiar tekstu:</label>
-    <input type="range" id="textSize" min="1" max="2" step="0.1" value="1">
-    <span id="textSizeValue">1</span>
-
+    <input type="range" id="textSize" min="1" max="3" step="0.1" value="1.2">
+    <span id="textSizeValue">1.2</span>
+    
     <br><br>
 
-    <button tabindex="5" onclick="switchDarkMode()">Tryb ciemny</button>
-    <button tabindex="6" onclick="switchLightMode()">Tryb jasny</button>
+    <button onclick="switchDarkMode()">Tryb ciemny</button>
+    <button onclick="switchLightMode()">Tryb jasny</button>
     <button onclick="switchHighContrastMode()">Tryb wysokiego kontrastu</button>
 </div>
 
@@ -244,7 +250,6 @@
     let textSize = document.getElementById('textSize');
     let textSizeValue = document.getElementById('textSizeValue');
 
-    // Ustawienia prędkości i głośności
     rate.addEventListener('input', function() {
         rateValue.textContent = rate.value;
         speech.rate = rate.value;
@@ -255,97 +260,48 @@
         speech.volume = volume.value;
     });
 
-    // Funkcja odczytująca tekst
     function readText() {
         let textContent = document.querySelector('.content').innerText;
         speech.text = textContent;
         speech.rate = rate.value;
         speech.volume = volume.value;
         speech.lang = 'pl-PL';
-        speechSynthesis.speak(speech);
+        window.speechSynthesis.speak(speech);
     }
 
-    // Pauza odczytu
     function pauseSpeech() {
-        speechSynthesis.pause();
+        window.speechSynthesis.pause();
     }
 
-    // Wznawianie odczytu
     function resumeSpeech() {
-        speechSynthesis.resume();
+        window.speechSynthesis.resume();
     }
 
-    // Zatrzymywanie odczytu
     function stopSpeech() {
-        speechSynthesis.cancel();
+        window.speechSynthesis.cancel();
     }
 
-    // Zmiana rozmiaru tekstu
     textSize.addEventListener('input', function() {
         let size = textSize.value;
         textSizeValue.textContent = size;
-        document.body.style.fontSize = `${size}rem`;  // Zmieniamy rozmiar tekstu w jednostkach rem
+        document.body.style.fontSize = `${size}rem`;
     });
 
-    // Funkcja zmieniająca tryb ciemny
     function switchDarkMode() {
-        document.body.style.backgroundColor = '#333';
-        document.body.style.color = '#FFF';
-        document.querySelector('.footer').style.backgroundColor = '#222';
-        document.querySelector('.content').style.backgroundColor = '#444';  // Tło dla obszaru instrukcji
-        document.querySelector('.controls').style.backgroundColor = '#555'; // Tło panelu sterowania
-
-        // Zmiana koloru podtytułów oraz tytułów na biały w trybie ciemnym
-        document.querySelector('h1').style.color = '#FFF';  // Tytuł na stronie
-        document.querySelector('h2').style.color = '#FFF';  // Podtytuł
-        document.querySelectorAll('h3').forEach(h3 => {
-            h3.style.color = '#FFF';  // Podtytuły instrukcji
-        });
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('high-contrast');
     }
 
-    // Funkcja zmieniająca tryb jasny
     function switchLightMode() {
-        document.body.style.backgroundColor = '#FFF';
-        document.body.style.color = '#333';
-        document.querySelector('.footer').style.backgroundColor = '#333';
-        document.querySelector('.content').style.backgroundColor = '#FFF';  // Tło dla obszaru instrukcji
-        document.querySelector('.controls').style.backgroundColor = '#FFF'; // Tło panelu sterowania
-
-        // Zmiana koloru podtytułów oraz tytułów na ciemny w trybie jasnym
-        document.querySelector('h1').style.color = '#333';  // Tytuł na stronie
-        document.querySelector('h2').style.color = '#333';  // Podtytuł
-        document.querySelectorAll('h3').forEach(h3 => {
-            h3.style.color = '#0056b3';  // Podtytuły instrukcji w ciemnym kolorze
-        });
+        document.body.classList.remove('dark-mode');
+        document.body.classList.remove('high-contrast');
     }
 
-    // Funkcja zmieniająca tryb wysokiego kontrastu
     function switchHighContrastMode() {
-        document.body.style.backgroundColor = '#000';  // Czarne tło
-        document.body.style.color = '#FFF';  // Biały tekst
-        document.querySelector('.footer').style.backgroundColor = '#000';  // Czarne tło stopki
-        document.querySelector('.footer').style.color = '#FFF';  // Biały tekst w stopce
-        document.querySelector('.content').style.backgroundColor = '#000';  // Czarne tło dla obszaru instrukcji
-        document.querySelector('.controls').style.backgroundColor = '#000'; // Czarne tło panelu sterowania
-        document.querySelector('.controls').style.color = '#FFF'; // Biały tekst w panelu sterowania
-
-        // Zmiana kolorów podtytułów i tytułów na biały
-        document.querySelector('h1').style.color = '#FFF';  // Tytuł na stronie
-        document.querySelector('h2').style.color = '#FFF';  // Podtytuł
-        document.querySelectorAll('h3').forEach(h3 => {
-            h3.style.color = '#FFF';  // Podtytuły instrukcji
-        });
-
-        // Dostosowanie przycisków w trybie wysokiego kontrastu
-        let buttons = document.querySelectorAll('.controls button');
-        buttons.forEach(button => {
-            button.style.backgroundColor = '#FFD700'; // Złoty kolor przycisków
-            button.style.color = '#000';  // Czarny tekst na przyciskach
-        });
+        document.body.classList.add('high-contrast');
+        document.body.classList.remove('dark-mode');
     }
 </script>
-
-
 
 </body>
 </html>
