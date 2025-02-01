@@ -1,29 +1,61 @@
+let utterance;
+let isSpeaking = false;
+let speechSynthesis = window.speechSynthesis;
+
+// Funkcja do rozpoczęcia odczytu
 function readText() {
-    // Pobieramy tekst z elementów, które mają id "document-text"
+    if (isSpeaking) return; // Zapobiega ponownemu kliknięciu, jeśli już odtwarzamy
+
+    // Pobieramy tekst
     const text = document.querySelectorAll('#document-text');
     let content = '';
     text.forEach(paragraph => content += paragraph.textContent + ' ');
 
-    // Tworzymy instancję syntezatora mowy
-    const speechSynthesis = window.speechSynthesis;
-    
     // Tworzymy obiekt mowy
-    const utterance = new SpeechSynthesisUtterance(content);
-
+    utterance = new SpeechSynthesisUtterance(content);
+    
     // Pobieramy wartości z suwaków
     const rate = document.getElementById("rate").value;
     const volume = document.getElementById("volume").value;
 
-    // Ustawiamy właściwości syntezatora
-    utterance.lang = 'pl-PL';  // Ustawienie języka polskiego
-    utterance.rate = rate;     // Ustawienie tempa odczytu
-    utterance.volume = volume; // Ustawienie głośności
+    // Ustawiamy właściwości mowy
+    utterance.lang = 'pl-PL';
+    utterance.rate = rate;
+    utterance.volume = volume;
 
-    // Uruchamiamy odtwarzanie
+    // Rozpoczynamy odtwarzanie
     speechSynthesis.speak(utterance);
+    isSpeaking = true;
+
+    // Dodajemy event listener na koniec odczytu
+    utterance.onend = () => {
+        isSpeaking = false;
+    };
 }
 
-// Aktualizowanie wartości wyświetlanych obok suwaków
+// Funkcja do pauzowania mowy
+function pauseSpeech() {
+    if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+    }
+}
+
+// Funkcja do wznawiania mowy
+function resumeSpeech() {
+    if (speechSynthesis.paused) {
+        speechSynthesis.resume();
+    }
+}
+
+// Funkcja do zatrzymywania mowy
+function stopSpeech() {
+    if (speechSynthesis.speaking || speechSynthesis.paused) {
+        speechSynthesis.cancel();
+        isSpeaking = false;
+    }
+}
+
+// Aktualizowanie wartości suwaków w czasie rzeczywistym
 document.getElementById("rate").addEventListener("input", function() {
     document.getElementById("rate-value").textContent = this.value;
 });
