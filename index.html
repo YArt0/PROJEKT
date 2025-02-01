@@ -252,6 +252,7 @@
     <button onclick="toggleSpeech()">Start</button>
     <button onclick="pauseSpeech()">Pauza</button>
     <button onclick="toggleMode()">Tryb ciemny</button>
+    <button onclick="toggleHighContrast()">Tryb wysokiego kontrastu</button>
     <button onclick="changeTextSize()">Zmień rozmiar tekstu</button>
 </div>
 
@@ -286,11 +287,14 @@
         document.body.classList.toggle('dark-mode');
     }
 
+    function toggleHighContrast() {
+        document.body.classList.toggle('high-contrast');
+    }
+
     function changeTextSize() {
         textSize = textSize === 1 ? 1.2 : 1;  // Zwiększ o 0.2 lub wróć do normalnego
         document.body.style.fontSize = `${textSize}em`;
     }
-
 </script>
 
 </body>
