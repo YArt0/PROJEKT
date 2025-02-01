@@ -1,12 +1,14 @@
 function readText() {
-    // Pobieramy tekst z elementu <p>
-    const text = document.getElementById("text-to-read").innerText;
+    // Pobieramy tekst z elementów, które mają id "document-text"
+    const text = document.querySelectorAll('#document-text');
+    let content = '';
+    text.forEach(paragraph => content += paragraph.textContent + ' ');
 
     // Tworzymy instancję syntezatora mowy
     const speechSynthesis = window.speechSynthesis;
-
+    
     // Tworzymy obiekt mowy
-    const utterance = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(content);
 
     // Pobieramy wartości z suwaków
     const rate = document.getElementById("rate").value;
