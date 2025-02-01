@@ -22,6 +22,21 @@
             color: white;
         }
 
+        /* Style dla tytułu "Monitorowanie zagrożeń..." */
+        .main-title {
+            font-size: 2.5rem;
+            color: black;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        /* Style dla nagłówka "INSTRUKCJA BHP DLA PRACOWNIKÓW FERMY BYDŁA" */
+        h2 {
+            font-size: 1.8rem;
+            color: black; /* Zawsze czarny */
+            margin-bottom: 20px;
+        }
+
         table {
             width: 100%;
             margin: 20px 0;
@@ -44,10 +59,6 @@
             margin: 0 auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, color 0.3s;
-        }
-
-        h2 {
-            color: black; /* Nagłówek w standardzie czarny */
         }
 
         p {
@@ -172,137 +183,5 @@
 <body>
 
 <header>
-    <h1>Studenckie koła naukowe tworzą innowacje</h1>
-    <h2>Monitorowanie zagrożeń w środowisku pracy hodowcy w świetle przepisów bhp oraz ochrony środowiska</h2>
-</header>
-
-<!-- Tabela z logotypami -->
-<table>
-    <tr>
-        <td><img src="01.png" alt="Logotyp 1" width="100"></td>
-        <td><img src="02.png" alt="Logotyp 2" width="100"></td>
-        <td><img src="kolo.png" alt="Logotyp 3" width="100"></td>
-    </tr>
-</table>
-
-<!-- Treść dokumentu -->
-<div class="content">
-    <h2>INSTRUKCJA BHP DLA PRACOWNIKÓW FERMY BYDŁA</h2>
-
-    <div class="section">
-        <h3>I. ODZIEŻ OCHRONNA</h3>
-        <ul>
-            <li>Stosuj odpowiednią odzież ochronną, w tym kombinezon, rękawice, i obuwie przeznaczone wyłącznie do pracy.</li>
-            <li>Dbaj o stan techniczny i higieniczny środków ochrony osobistej i zgłaszaj ich uszkodzenia.</li>
-            <li>Unikaj środków, które mogą wydzielać intensywny zapach (np. perfum, alkoholu, środków ochrony roślin itp.).</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>II. HIGIENA OSOBISTA</h3>
-        <ul>
-            <li>Regularnie myj ręce przed i po pracy. Korzystaj z pomieszczeń socjalnych, w których można myć ręce, przebrać się i przechowywać odzież roboczą.</li>
-            <li>Podczas pracy unikaj dotykania twarzy rękami, ze względu na ryzyko samozakażenia.</li>
-            <li>Bezwzględnie przestrzegaj procedur bioasekuracji w celu zapobiegania rozprzestrzenianiu się chorób.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>III. POSTĘPOWANIE ZE ZWIERZĘTAMI</h3>
-        <ul>
-            <li>Monitoruj stan zdrowia krów poprzez ich codzienną obserwację.</li>
-            <li>Zawsze stosuj izolowanie chorych zwierząt i opiekę weterynaryjną.</li>
-            <li>Przestrzegaj programu szczepień i zabiegów profilaktycznych.</li>
-            <li>Zachowaj ostrożność podczas obsługi zwierząt, szczególnie rozpłodników i w okresie rui.</li>
-            <li>Zapewnij zwierzętom odpowiednią ilość paszy i wody zgodnie z ich zapotrzebowaniem.</li>
-            <li>Regularnie monitoruj mikroklimat pomieszczeń hodowlanych.</li>
-            <li>Zgłaszaj niezwłocznie zaobserwowane nieprawidłowości, szczególnie w kwestiach profilaktyki i leczenia chorób zwierząt.</li>
-            <li>W przypadku wystąpienia choroby zakaźnej u zwierząt, należy powiadomić służby weterynaryjne.</li>
-            <li>Dbaj o aktualne prowadzenie niezbędnej dokumentacji hodowlanej.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>IV. ZARZĄDZANIE ODPADAMI</h3>
-        <ul>
-            <li>Przestrzegaj odpowiedniego składowania i usuwania odchodów zwierzęcych zgodnie z obowiązującymi przepisami.</li>
-            <li>Utrzymuj czystość w obiektach hodowlanych, w tym systemów kanalizacyjnych.</li>
-            <li>Zwierzęta padłe należy przeznaczyć do utylizacji zgodnie z zaleceniami służb weterynaryjnych.</li>
-        </ul>
-    </div>
-
-    <h2>INSTRUKCJA BHP DLA PRACOWNIKÓW FERMY BYDŁA (cz. 2)</h2>
-
-    <div class="section">
-        <h3>I. UWAGI OGÓLNE</h3>
-        <ul>
-            <li>Pracownik zatrudniony na terenie fermy musi być odpowiednio przeszkolony w zakresie obsługi zwierząt oraz sprzętu używanego w fermie.</li>
-            <li>Przed przystąpieniem do pracy należy zapoznać się z instrukcją stanowiskową oraz regulaminem fermy.</li>
-            <li>Pracownik musi być wyposażony w odpowiednią odzież ochronną, w tym buty robocze, rękawice, odzież roboczą oraz środki ochrony indywidualnej.</li>
-        </ul>
-    </div>
-
-</div>
-
-<!-- Kontrolki do zmiany ustawień -->
-<div class="controls">
-    <h3>Wsparcie użytkownika:</h3>
-    <button onclick="toggleSpeech()">Start</button>
-    <button onclick="pauseSpeech()">Pauza</button>
-    <button onclick="toggleMode()">Tryb ciemny</button>
-    <button onclick="toggleHighContrast()">Tryb wysokiego kontrastu</button>
-    <button onclick="changeTextSize()">Zmień rozmiar tekstu</button>
-</div>
-
-<!-- Stopka -->
-<div class="footer">
-    <p>&copy; 2025 Monitorowanie zagrożeń w środowisku pracy hodowcy</p>
-</div>
-
-<script>
-    let isSpeaking = false;
-    let speech = new SpeechSynthesisUtterance();
-    let textSize = 1; // Początkowy rozmiar tekstu
-    speech.lang = 'pl-PL';
-    const synth = window.speechSynthesis;
-
-    function toggleSpeech() {
-        if (!isSpeaking) {
-            speech.text = document.querySelector('.content').innerText;
-            synth.speak(speech);
-            isSpeaking = true;
-        }
-    }
-
-    function pauseSpeech() {
-        if (isSpeaking) {
-            synth.pause();
-            isSpeaking = false;
-        }
-    }
-
-    function toggleMode() {
-        const body = document.body;
-        const button = document.querySelector('.controls button:nth-child(3)');
-
-        body.classList.toggle('dark-mode');
-        // Zmiana tekstu przycisku
-        if (body.classList.contains('dark-mode')) {
-            button.textContent = 'Tryb jasny';
-        } else {
-            button.textContent = 'Tryb ciemny';
-        }
-    }
-
-    function toggleHighContrast() {
-        document.body.classList.toggle('high-contrast');
-    }
-
-    function changeTextSize() {
-        textSize = textSize === 1 ? 1.2 : 1;  // Zwiększ o 0.2 lub wróć do normalnego
-        document.body.style.fontSize = `${textSize}em`;
-    }
-</script>
-
-</body>
-</html>
+    <h1 class="main-title">Studenckie koła naukowe tworzą innowacje</h1>
+    <h2>Monitorowanie zagrożeń w środowisku pracy hodow
