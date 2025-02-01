@@ -317,7 +317,33 @@
             h3.style.color = '#0056b3';  // Podtytuły instrukcji w ciemnym kolorze
         });
     }
+
+    // Funkcja zmieniająca tryb wysokiego kontrastu
+    function switchHighContrastMode() {
+        document.body.style.backgroundColor = '#000';  // Czarne tło
+        document.body.style.color = '#FFF';  // Biały tekst
+        document.querySelector('.footer').style.backgroundColor = '#000';  // Czarne tło stopki
+        document.querySelector('.footer').style.color = '#FFF';  // Biały tekst w stopce
+        document.querySelector('.content').style.backgroundColor = '#000';  // Czarne tło dla obszaru instrukcji
+        document.querySelector('.controls').style.backgroundColor = '#000'; // Czarne tło panelu sterowania
+        document.querySelector('.controls').style.color = '#FFF'; // Biały tekst w panelu sterowania
+
+        // Zmiana kolorów podtytułów i tytułów na biały
+        document.querySelector('h1').style.color = '#FFF';  // Tytuł na stronie
+        document.querySelector('h2').style.color = '#FFF';  // Podtytuł
+        document.querySelectorAll('h3').forEach(h3 => {
+            h3.style.color = '#FFF';  // Podtytuły instrukcji
+        });
+
+        // Dostosowanie przycisków w trybie wysokiego kontrastu
+        let buttons = document.querySelectorAll('.controls button');
+        buttons.forEach(button => {
+            button.style.backgroundColor = '#FFD700'; // Złoty kolor przycisków
+            button.style.color = '#000';  // Czarny tekst na przyciskach
+        });
+    }
 </script>
+
 
 
 </body>
