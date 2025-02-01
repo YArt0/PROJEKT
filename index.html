@@ -52,16 +52,14 @@
             margin-bottom: 15px;
         }
 
-        /* Panel po prawej stronie */
+        /* Styl panelu odczytu w każdym rozdziale */
         .controls {
-            position: fixed;
-            right: 10px;
-            top: 100px;
-            width: 200px;
             background-color: #fff;
             padding: 15px;
             border: 1px solid #ddd;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
 
         .controls button {
@@ -133,6 +131,21 @@
             <li>Dbaj o stan techniczny i higieniczny środków ochrony osobistej i zgłaszaj ich uszkodzenia.</li>
             <li>Unikaj środków, które mogą wydzielać intensywny zapach (np. perfum, alkoholu, środków ochrony roślin itp.).</li>
         </ul>
+        <!-- Panel odczytu dla tego rozdziału -->
+        <div class="controls">
+            <button onclick="readText('section1')">Odczytaj ten rozdział</button>
+            <button onclick="pauseSpeech()">Pauza</button>
+            <button onclick="resumeSpeech()">Wznowienie</button>
+            <button onclick="stopSpeech()">Stop</button>
+            <br><br>
+            <label for="rate-1">Tempo odczytu:</label>
+            <input type="range" id="rate-1" min="0.1" max="2" step="0.1" value="1">
+            <span id="rate-value-1">1</span>
+            <br><br>
+            <label for="volume-1">Głośność:</label>
+            <input type="range" id="volume-1" min="0" max="1" step="0.1" value="1">
+            <span id="volume-value-1">1</span>
+        </div>
     </div>
 
     <div class="section">
@@ -142,28 +155,25 @@
             <li>Podczas pracy unikaj dotykania twarzy i rękami ze względu na ryzyko samozakażenia.</li>
             <li>Bezwzględnie przestrzegaj procedur bioasekuracji w celu zapobiegania rozprzestrzenianiu się chorób.</li>
         </ul>
+        <!-- Panel odczytu dla tego rozdziału -->
+        <div class="controls">
+            <button onclick="readText('section2')">Odczytaj ten rozdział</button>
+            <button onclick="pauseSpeech()">Pauza</button>
+            <button onclick="resumeSpeech()">Wznowienie</button>
+            <button onclick="stopSpeech()">Stop</button>
+            <br><br>
+            <label for="rate-2">Tempo odczytu:</label>
+            <input type="range" id="rate-2" min="0.1" max="2" step="0.1" value="1">
+            <span id="rate-value-2">1</span>
+            <br><br>
+            <label for="volume-2">Głośność:</label>
+            <input type="range" id="volume-2" min="0" max="1" step="0.1" value="1">
+            <span id="volume-value-2">1</span>
+        </div>
     </div>
 
-    <!-- Pozostałe sekcje instrukcji BHP pozostają bez zmian -->
+    <!-- Możesz dodać więcej sekcji w podobny sposób -->
 
-</div>
-
-<!-- Panel sterowania odczytem po prawej stronie -->
-<div class="controls">
-    <button onclick="readText()">Odczytaj dokument</button>
-    <button onclick="pauseSpeech()">Pauza</button>
-    <button onclick="resumeSpeech()">Wznowienie</button>
-    <button onclick="stopSpeech()">Stop</button>
-    <br><br>
-    <label for="rate">Tempo odczytu:</label>
-    <input type="range" id="rate" min="0.1" max="2" step="0.1" value="1">
-    <span id="rate-value">1</span>
-    
-    <br><br>
-
-    <label for="volume">Głośność:</label>
-    <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
-    <span id="volume-value">1</span>
 </div>
 
 <footer class="footer">
@@ -172,28 +182,13 @@
 
 <script>
     let speech = new SpeechSynthesisUtterance();
-    let rate = document.getElementById('rate');
-    let volume = document.getElementById('volume');
-    let rateValue = document.getElementById('rate-value');
-    let volumeValue = document.getElementById('volume-value');
 
-    // Ustawienia prędkości i głośności
-    rate.addEventListener('input', function() {
-        rateValue.textContent = rate.value;
-        speech.rate = rate.value;
-    });
-
-    volume.addEventListener('input', function() {
-        volumeValue.textContent = volume.value;
-        speech.volume = volume.value;
-    });
-
-    // Funkcja odczytująca tekst
-    function readText() {
-        let textContent = document.querySelector('.content').innerText;
-        speech.text = textContent;
-        speech.rate = rate.value;
-        speech.volume = volume.value;
+    // Funkcja do odczytu tekstu danego rozdziału
+    function readText(sectionId) {
+        const sectionText = document.getElementById(sectionId).innerText;
+        speech.text = sectionText;
+        speech.rate = document.getElementById('rate-' + sectionId.charAt(sectionId.length - 1)).value;
+        speech.volume = document.getElementById('volume-' + sectionId.charAt(sectionId.length - 1)).value;
         speech.lang = 'pl-PL';
         speechSynthesis.speak(speech);
     }
