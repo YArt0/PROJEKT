@@ -163,6 +163,12 @@
         body.high-contrast h1, body.high-contrast h2, body.high-contrast h3 {
             color: #FFD700;
         }
+
+        /* Kolor podtytułów w trybie jasnym */
+        body:not(.dark-mode) h2 {
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -243,9 +249,9 @@
 <!-- Kontrolki do zmiany ustawień -->
 <div class="controls">
     <h3>Wsparcie użytkownika:</h3>
-    <button onclick="toggleSpeech()">Start/Pauza Odczytu</button>
-    <button onclick="restartSpeech()">Wznów Odczyt</button>
-    <button onclick="toggleMode()">Tryb ciemny / wysoki kontrast</button>
+    <button onclick="toggleSpeech()">Start</button>
+    <button onclick="pauseSpeech()">Pauza</button>
+    <button onclick="toggleMode()">Tryb ciemny</button>
     <button onclick="changeTextSize()">Zmień rozmiar tekstu</button>
 </div>
 
@@ -262,26 +268,22 @@
     const synth = window.speechSynthesis;
 
     function toggleSpeech() {
-        if (isSpeaking) {
-            synth.pause();
-        } else {
-            synth.speak(speech);
-        }
-        isSpeaking = !isSpeaking;
-    }
-
-    function restartSpeech() {
-        if (synth.speaking || isSpeaking) {
-            synth.cancel();
+        if (!isSpeaking) {
             speech.text = document.querySelector('.content').innerText;
             synth.speak(speech);
             isSpeaking = true;
         }
     }
 
+    function pauseSpeech() {
+        if (isSpeaking) {
+            synth.pause();
+            isSpeaking = false;
+        }
+    }
+
     function toggleMode() {
         document.body.classList.toggle('dark-mode');
-        document.body.classList.toggle('high-contrast');
     }
 
     function changeTextSize() {
@@ -289,7 +291,6 @@
         document.body.style.fontSize = `${textSize}em`;
     }
 
-    speech.text = document.querySelector('.content').innerText;
 </script>
 
 </body>
