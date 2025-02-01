@@ -114,28 +114,38 @@
             background-color: #222;
         }
 
+        /* Tryb wysokiego kontrastu */
         body.high-contrast {
             background-color: #000;
-            color: #FFF;
+            color: #FFD700; /* Zmiana tekstu na żółty */
         }
 
         body.high-contrast .footer {
             background-color: #000;
-            color: #FFF;
+            color: #FFD700; /* Żółty tekst w stopce */
         }
 
         body.high-contrast .content {
             background-color: #000;
+            color: #FFD700; /* Żółty tekst w treści */
         }
 
         body.high-contrast .controls {
             background-color: #000;
-            color: #FFF;
+            color: #FFD700; /* Żółty tekst w panelu */
         }
 
         body.high-contrast .controls button {
-            background-color: #FFD700;
-            color: #000;
+            background-color: #FFD700; /* Żółte tło przycisków */
+            color: #000; /* Czarny tekst na przyciskach */
+        }
+
+        body.high-contrast .controls button:hover {
+            background-color: #FFB800;
+        }
+
+        body.high-contrast h1, body.high-contrast h2, body.high-contrast h3 {
+            color: #FFD700; /* Żółty tekst nagłówków */
         }
     </style>
 </head>
