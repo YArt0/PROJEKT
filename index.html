@@ -47,7 +47,7 @@
         }
 
         h2 {
-            color: #0056b3;
+            color: black; /* Nagłówek w standardzie czarny */
         }
 
         p {
@@ -130,7 +130,6 @@
             background-color: #555;
         }
 
-        /* Tryb wysokiego kontrastu */
         body.high-contrast {
             background-color: #000;
             color: #FFD700;
@@ -164,11 +163,10 @@
             color: #FFD700;
         }
 
-        /* Kolor podtytułów w trybie jasnym */
-        body:not(.dark-mode) h2 {
-            color: white;
+        /* Ustawienia dla nagłówków w trybie jasnym i ciemnym */
+        body:not(.dark-mode) h2, body.dark-mode h2 {
+            color: black; /* Nagłówek zawsze czarny */
         }
-
     </style>
 </head>
 <body>
@@ -181,7 +179,7 @@
 <!-- Tabela z logotypami -->
 <table>
     <tr>
-        <td><img src="01_znak_siatka_podstawowy_kolor_biale_tlo.png" alt="Logotyp 1" width="100"></td>
+        <td><img src="01.png" alt="Logotyp 1" width="100"></td>
         <td><img src="02.png" alt="Logotyp 2" width="100"></td>
         <td><img src="kolo.png" alt="Logotyp 3" width="100"></td>
     </tr>
@@ -284,7 +282,16 @@
     }
 
     function toggleMode() {
-        document.body.classList.toggle('dark-mode');
+        const body = document.body;
+        const button = document.querySelector('.controls button:nth-child(3)');
+
+        body.classList.toggle('dark-mode');
+        // Zmiana tekstu przycisku
+        if (body.classList.contains('dark-mode')) {
+            button.textContent = 'Tryb jasny';
+        } else {
+            button.textContent = 'Tryb ciemny';
+        }
     }
 
     function toggleHighContrast() {
