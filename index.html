@@ -260,6 +260,9 @@
     // Funkcja do rozpoczęcia odczytu
     function readInstruction() {
         speech.text = document.querySelector('.content').innerText;
+        if (synth.speaking) {
+            synth.cancel();
+        }
         synth.speak(speech);
         isSpeaking = true;
     }
