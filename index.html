@@ -52,17 +52,18 @@
             margin-bottom: 15px;
         }
 
-        .controls {
-    position: absolute;
-    left: 50%;
-    top: 150px; 
+       .controls {
+    position: fixed;
+    right: 10px; /* Możesz użyć 'left: 10px;' jeśli chcesz umieścić panel po lewej stronie */
+    top: 50%; 
     width: 200px;
     background-color: #fff;
     padding: 15px;
     border: 1px solid #ddd;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transform: translateX(-50%);
+    transform: translateY(-50%); /* Umożliwia ustawienie dokładnie na środku wysokości ekranu */
 }
+
 
         .controls button {
             width: 100%;
