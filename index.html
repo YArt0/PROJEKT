@@ -114,6 +114,20 @@
             background-color: #222;
         }
 
+        body.dark-mode .controls {
+            background-color: #444;
+            color: #FFF;
+        }
+
+        body.dark-mode .controls button {
+            background-color: #333;
+            color: #FFF;
+        }
+
+        body.dark-mode .controls button:hover {
+            background-color: #555;
+        }
+
         /* Tryb wysokiego kontrastu */
         body.high-contrast {
             background-color: #000;
@@ -204,6 +218,9 @@
     
     <br><br>
 
+    <button onclick="resetTextSize()">Resetuj rozmiar tekstu</button>
+    <br><br>
+
     <button onclick="switchDarkMode()">Tryb ciemny</button>
     <button onclick="switchLightMode()">Tryb jasny</button>
     <button onclick="switchHighContrastMode()">Tryb wysokiego kontrastu</button>
@@ -275,6 +292,12 @@
         textSizeValue.textContent = size;
         document.body.style.fontSize = `${size}rem`;
     });
+
+    function resetTextSize() {
+        document.body.style.fontSize = '1.2rem'; // Ustawiamy domyślny rozmiar
+        textSize.value = 1.2;
+        textSizeValue.textContent = 1.2;
+    }
 
     function switchDarkMode() {
         document.body.classList.add('dark-mode');
