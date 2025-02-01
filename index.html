@@ -55,7 +55,7 @@
         .controls {
             position: fixed;
             right: 10px;
-            top: 100px;
+            top: 150px; /* Zmieniamy top, aby przesunąć boczne menu niżej */
             width: 200px;
             background-color: #fff;
             padding: 15px;
@@ -241,7 +241,7 @@
 <!-- Kontrolki do czytania tekstu -->
 <div class="controls">
     <center><h3>Wsparcie użytkownika</h3></center>
-    <button onclick="starttSpeech()">Wznów Odczyt</button>
+    <button onclick="readInstruction()">Przeczytaj instrukcję</button> <!-- Nowy przycisk -->
     <button onclick="toggleSpeech()">Start/Pause</button>
     <button onclick="toggleMode()">Wysoki kontrast</button>
 </div>
@@ -257,6 +257,14 @@
     speech.lang = 'pl-PL'; // Ustawienie języka na polski
     const synth = window.speechSynthesis;
 
+    // Funkcja do rozpoczęcia odczytu
+    function readInstruction() {
+        speech.text = document.querySelector('.content').innerText;
+        synth.speak(speech);
+        isSpeaking = true;
+    }
+
+    // Funkcja do pauzy/wznawiania odczytu
     function toggleSpeech() {
         if (isSpeaking) {
             synth.pause();
@@ -266,15 +274,6 @@
         isSpeaking = !isSpeaking;
     }
 
-    function restartSpeech() {
-        if (synth.speaking || isSpeaking) {
-            synth.cancel();
-            speech.text = document.querySelector('.content').innerText; // Odczyt treści
-            synth.speak(speech);
-            isSpeaking = true;
-        }
-    }
-
     function toggleMode() {
         document.body.classList.toggle('dark-mode');
         document.body.classList.toggle('high-contrast');
@@ -282,7 +281,6 @@
 
     // Inicjalizacja tekstu do odczytu
     speech.text = document.querySelector('.content').innerText;
-
 </script>
 
 </body>
