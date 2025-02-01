@@ -4,105 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitorowanie zagrożeń w środowisku pracy hodowcy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            padding-bottom: 50px; /* Miejsce na stopkę */
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #0056b3;
-            color: white;
-        }
-
-        table {
-            width: 100%;
-            margin: 20px 0;
-            border-collapse: collapse;
-            text-align: center;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 10px;
-        }
-
-        .content {
-            padding: 20px;
-            background-color: white;
-            max-width: 1200px;
-            margin: 0 auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        /* Styl panelu odczytu w każdym rozdziale */
-        .controls {
-            background-color: #fff;
-            padding: 15px;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        .controls button {
-            width: 100%;
-            padding: 10px;
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            margin: 5px 0;
-            cursor: pointer;
-        }
-
-        .controls button:hover {
-            background-color: #003b72;
-        }
-
-        /* Styl dla tytułów rozdziałów */
-        h3 {
-            color: #0056b3;
-        }
-
-        /* Styl dla list */
-        ul {
-            margin-left: 20px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        /* Styl dla przypiętej stopki na dole */
-        .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 15px 0;
-            background-color: #333;
-            color: white;
-            font-size: 14px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Jeśli masz plik CSS, to linkujemy go tutaj -->
 </head>
 <body>
 
@@ -124,52 +26,32 @@
 <div class="content">
     <h2>INSTRUKCJA BHP DLA PRACOWNIKÓW FERMY BYDŁA</h2>
 
-    <div class="section">
+    <div class="section" id="section1">
         <h3>I. ODZIEŻ OCHRONNA</h3>
+        <div class="controls">
+            <button onclick="readSection('section1')">Play</button>
+            <button onclick="pauseSpeech()">Pauza</button>
+            <button onclick="stopSpeech()">Stop</button>
+        </div>
         <ul>
             <li>Stosuj odpowiednią odzież ochronną, w tym kombinezon, rękawice, i obuwie przeznaczone wyłącznie do pracy.</li>
             <li>Dbaj o stan techniczny i higieniczny środków ochrony osobistej i zgłaszaj ich uszkodzenia.</li>
             <li>Unikaj środków, które mogą wydzielać intensywny zapach (np. perfum, alkoholu, środków ochrony roślin itp.).</li>
         </ul>
-        <!-- Panel odczytu dla tego rozdziału -->
-        <div class="controls">
-            <button onclick="readText('section1')">Odczytaj ten rozdział</button>
-            <button onclick="pauseSpeech()">Pauza</button>
-            <button onclick="resumeSpeech()">Wznowienie</button>
-            <button onclick="stopSpeech()">Stop</button>
-            <br><br>
-            <label for="rate-1">Tempo odczytu:</label>
-            <input type="range" id="rate-1" min="0.1" max="2" step="0.1" value="1">
-            <span id="rate-value-1">1</span>
-            <br><br>
-            <label for="volume-1">Głośność:</label>
-            <input type="range" id="volume-1" min="0" max="1" step="0.1" value="1">
-            <span id="volume-value-1">1</span>
-        </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="section2">
         <h3>II. HIGIENA OSOBISTA</h3>
+        <div class="controls">
+            <button onclick="readSection('section2')">Play</button>
+            <button onclick="pauseSpeech()">Pauza</button>
+            <button onclick="stopSpeech()">Stop</button>
+        </div>
         <ul>
             <li>Regularnie myj ręce przed i po pracy. Korzystaj z pomieszczeń socjalnych, w którym można myć ręce, przebrać się i przechowywać odzież roboczą.</li>
             <li>Podczas pracy unikaj dotykania twarzy i rękami ze względu na ryzyko samozakażenia.</li>
             <li>Bezwzględnie przestrzegaj procedur bioasekuracji w celu zapobiegania rozprzestrzenianiu się chorób.</li>
         </ul>
-        <!-- Panel odczytu dla tego rozdziału -->
-        <div class="controls">
-            <button onclick="readText('section2')">Odczytaj ten rozdział</button>
-            <button onclick="pauseSpeech()">Pauza</button>
-            <button onclick="resumeSpeech()">Wznowienie</button>
-            <button onclick="stopSpeech()">Stop</button>
-            <br><br>
-            <label for="rate-2">Tempo odczytu:</label>
-            <input type="range" id="rate-2" min="0.1" max="2" step="0.1" value="1">
-            <span id="rate-value-2">1</span>
-            <br><br>
-            <label for="volume-2">Głośność:</label>
-            <input type="range" id="volume-2" min="0" max="1" step="0.1" value="1">
-            <span id="volume-value-2">1</span>
-        </div>
     </div>
 
     <!-- Możesz dodać więcej sekcji w podobny sposób -->
@@ -180,34 +62,6 @@
     <p>&copy; 2025 Studenckie Koła Naukowe - Wszystkie prawa zastrzeżone</p>
 </footer>
 
-<script>
-    let speech = new SpeechSynthesisUtterance();
-
-    // Funkcja do odczytu tekstu danego rozdziału
-    function readText(sectionId) {
-        const sectionText = document.getElementById(sectionId).innerText;
-        speech.text = sectionText;
-        speech.rate = document.getElementById('rate-' + sectionId.charAt(sectionId.length - 1)).value;
-        speech.volume = document.getElementById('volume-' + sectionId.charAt(sectionId.length - 1)).value;
-        speech.lang = 'pl-PL';
-        speechSynthesis.speak(speech);
-    }
-
-    // Pauza odczytu
-    function pauseSpeech() {
-        speechSynthesis.pause();
-    }
-
-    // Wznawianie odczytu
-    function resumeSpeech() {
-        speechSynthesis.resume();
-    }
-
-    // Zatrzymywanie odczytu
-    function stopSpeech() {
-        speechSynthesis.cancel();
-    }
-</script>
-
+<script src="scripts.js"></script> <!-- Skrypt JS w osobnym pliku -->
 </body>
 </html>
