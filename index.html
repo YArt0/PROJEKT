@@ -12,7 +12,6 @@
             padding: 0;
             background-color: #f4f4f4;
             padding-bottom: 50px;
-            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
@@ -43,11 +42,10 @@
             max-width: 1200px;
             margin: 0 auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, color 0.3s;
         }
 
         h2 {
-            color: black; /* Nagłówek w standardzie czarny */
+            color: #FFF;
         }
 
         p {
@@ -130,6 +128,7 @@
             background-color: #555;
         }
 
+        /* Tryb wysokiego kontrastu */
         body.high-contrast {
             background-color: #000;
             color: #FFD700;
@@ -162,11 +161,6 @@
         body.high-contrast h1, body.high-contrast h2, body.high-contrast h3 {
             color: #FFD700;
         }
-
-        body:not(.dark-mode) h2 {
-            color: black; /* Ustawienie koloru nagłówka na czarny w trybie jasnym */
-        }
-
     </style>
 </head>
 <body>
@@ -229,6 +223,10 @@
             <li>Utrzymuj czystość w obiektach hodowlanych, w tym systemów kanalizacyjnych.</li>
             <li>Zwierzęta padłe należy przeznaczyć do utylizacji zgodnie z zaleceniami służb weterynaryjnych.</li>
         </ul>
+        <p>Pamiętaj, że przestrzeganie tej instrukcji jest kluczowe dla utrzymania optymalnego stanu sanitarnego fermy oraz minimalizacji ryzyka związanego z narażeniem hodowcy na czynniki biologiczne.</p>
+        <p>Pracownik ma obowiązek przestrzegać procedur higienicznych i bezpieczeństwa, a wszelkie wątpliwości czy incydenty powinny być natychmiast zgłaszane przełożonemu i odpowiednim służbom!</p>
+        <h4>PAMIĘTAJ</h4>
+        <p>Żadne, nawet najlepiej sformułowane zasady bezpieczeństwa, nie mogą przewidzieć wszystkich możliwych do zaistnienia sytuacji. Zasady bezpieczeństwa nie zastępują wyobraźni i ostrożności!!!</p>
     </div>
 
     <h2>INSTRUKCJA BHP DLA PRACOWNIKÓW FERMY BYDŁA (cz. 2)</h2>
@@ -238,69 +236,166 @@
         <ul>
             <li>Pracownik zatrudniony na terenie fermy musi być odpowiednio przeszkolony w zakresie obsługi zwierząt oraz sprzętu używanego w fermie.</li>
             <li>Przed przystąpieniem do pracy należy zapoznać się z instrukcją stanowiskową oraz regulaminem fermy.</li>
-            <li>Pracownik musi być wyposażony w odpowiednią odzież ochronną, w tym buty robocze, rękawice, odzież roboczą oraz środki ochrony indywidualnej.</li>
+            <li>Pracownik musi być wyposażony w odpowiednią odzież ochronną, w tym buty robocze, rękawice, odzież roboczą oraz środki ochrony osobistej.</li>
         </ul>
     </div>
 
+    <div class="section">
+        <h3>II. ZASADY BEZPIECZNEJ PRACY</h3>
+        <ul>
+            <li>Przed rozpoczęciem pracy:
+                <ul>
+                    <li>Sprawdzenie stanu technicznego narzędzi i urządzeń.</li>
+                    <li>Upewnienie się, że miejsce pracy jest odpowiednio oświetlone i uporządkowane.</li>
+                    <li>Sprawdzenie, czy zwierzęta są spokojne i w dobrym stanie zdrowia.</li>
+                </ul>
+            </li>
+            <li>Podczas pracy:
+                <ul>
+                    <li>Zachowanie ostrożności przy kontaktach z bydłem, unikanie gwałtownych ruchów i hałasu.</li>
+                    <li>Korzystanie z odpowiednich narzędzi i sprzętu zgodnie z ich przeznaczeniem.</li>
+                    <li>Regularne przerwy na odpoczynek, szczególnie podczas pracy w trudnych warunkach.</li>
+                    <li>Wykonywanie czynności zgodnie z instrukcjami i procedurami fermy.</li>
+                </ul>
+            </li>
+            <li>Po zakończeniu pracy:
+                <ul>
+                    <li>Wyłączenie i zabezpieczenie sprzętu.</li>
+                    <li>Umycie i dezynfekcja rąk oraz narzędzi.</li>
+                    <li>Uporządkowanie miejsca pracy.</li>
+                    <li>Zgłaszanie wszelkich nieprawidłowości, usterek sprzętu lub problemów zdrowotnych zwierząt przełożonemu.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>III. ZASADY POSTĘPOWANIA W SYTUACJACH AWARYJNYCH</h3>
+        <ul>
+            <li>W przypadku wypadku należy niezwłocznie powiadomić przełożonego oraz udzielić pierwszej pomocy poszkodowanemu.</li>
+            <li>W razie pożaru należy ewakuować się zgodnie z planem ewakuacji i powiadomić straż pożarną.</li>
+            <li>W przypadku wystąpienia choroby zakaźnej w stadzie, należy odizolować chore zwierzęta i powiadomić weterynarza.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>IV. POSTANOWIENIA KOŃCOWE</h3>
+        <ul>
+            <li>Każdy pracownik jest zobowiązany do przestrzegania zasad BHP oraz przepisów dotyczących ochrony zdrowia i dobrostanu zwierząt.</li>
+            <li>Niezastosowanie się do instrukcji może skutkować konsekwencjami służbowymi, w tym odpowiedzialnością karną i cywilną.</li>
+        </ul>
+    </div>
 </div>
 
-<!-- Kontrolki do zmiany ustawień -->
+<!-- Panel sterowania odczytem po prawej stronie -->
 <div class="controls">
-    <h3>Wsparcie użytkownika:</h3>
-    <button onclick="toggleSpeech()">Start</button>
-    <button onclick="pauseSpeech()">Pauza</button>
-    <button onclick="toggleMode()">Tryb ciemny</button>
-    <button onclick="toggleHighContrast()">Tryb wysokiego kontrastu</button>
-    <button onclick="changeTextSize()">Zmień rozmiar tekstu</button>
+    <button id="togglePlayPause" onclick="togglePlayPause()">Odczytaj dokument</button>
+    <br><br>
+    <label for="rate">Tempo odczytu:</label>
+    <input type="range" id="rate" min="0.1" max="2" step="0.1" value="1">
+    <span id="rate-value">1</span>
+    
+    <br><br>
+
+    <label for="volume">Głośność:</label>
+    <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+    <span id="volume-value">1</span>
+    
+    <br><br>
+
+    <button id="textSizeButton" onclick="toggleTextSize()">Zwiększ rozmiar tekstu</button>
+    
+    <br><br>
+
+    <button onclick="switchDarkMode()">Tryb ciemny</button>
+    <button onclick="switchLightMode()">Tryb jasny</button>
+    <button onclick="switchHighContrastMode()">Tryb wysokiego kontrastu</button>
 </div>
 
-<!-- Stopka -->
-<div class="footer">
-    <p>&copy; 2025 Monitorowanie zagrożeń w środowisku pracy hodowcy</p>
-</div>
+<footer class="footer">
+    <p>&copy; 2025 Studenckie Koła Naukowe - Wszystkie prawa zastrzeżone</p>
+</footer>
 
 <script>
-    let isSpeaking = false;
     let speech = new SpeechSynthesisUtterance();
-    let textSize = 1; // Początkowy rozmiar tekstu
-    speech.lang = 'pl-PL';
-    const synth = window.speechSynthesis;
+    let rate = document.getElementById('rate');
+    let volume = document.getElementById('volume');
+    let rateValue = document.getElementById('rate-value');
+    let volumeValue = document.getElementById('volume-value');
+    let isSpeaking = false;
+    let isTextSizeIncreased = false;
 
-    function toggleSpeech() {
-        if (!isSpeaking) {
-            speech.text = document.querySelector('.content').innerText;
-            synth.speak(speech);
-            isSpeaking = true;
-        }
+    rate.addEventListener('input', function() {
+        rateValue.textContent = rate.value;
+        speech.rate = rate.value;
+    });
+
+    volume.addEventListener('input', function() {
+        volumeValue.textContent = volume.value;
+        speech.volume = volume.value;
+    });
+
+    function readText() {
+        let textContent = document.querySelector('.content').innerText;
+        speech.text = textContent;
+        speech.rate = rate.value;
+        speech.volume = volume.value;
+        speech.lang = 'pl-PL';
+        window.speechSynthesis.speak(speech);
     }
 
     function pauseSpeech() {
+        window.speechSynthesis.pause();
+    }
+
+    function resumeSpeech() {
+        window.speechSynthesis.resume();
+    }
+
+    function stopSpeech() {
+        window.speechSynthesis.cancel();
+    }
+
+    function togglePlayPause() {
         if (isSpeaking) {
-            synth.pause();
-            isSpeaking = false;
-        }
-    }
-
-    function toggleMode() {
-        const body = document.body;
-        const button = document.querySelector('.controls button:nth-child(3)');
-
-        body.classList.toggle('dark-mode');
-        // Zmiana tekstu przycisku
-        if (body.classList.contains('dark-mode')) {
-            button.textContent = 'Tryb jasny';
+            if (window.speechSynthesis.speaking) {
+                pauseSpeech();
+                document.getElementById('togglePlayPause').textContent = 'Wznowienie odczytu';
+            } else {
+                resumeSpeech();
+                document.getElementById('togglePlayPause').textContent = 'Pauza';
+            }
         } else {
-            button.textContent = 'Tryb ciemny';
+            isSpeaking = true;
+            readText();
+            document.getElementById('togglePlayPause').textContent = 'Pauza';
         }
     }
 
-    function toggleHighContrast() {
-        document.body.classList.toggle('high-contrast');
+    function toggleTextSize() {
+        if (isTextSizeIncreased) {
+            document.body.style.fontSize = '1.2rem';
+            document.getElementById('textSizeButton').textContent = 'Zwiększ rozmiar tekstu';
+        } else {
+            document.body.style.fontSize = '1.4rem';
+            document.getElementById('textSizeButton').textContent = 'Przywróć rozmiar tekstu';
+        }
+        isTextSizeIncreased = !isTextSizeIncreased;
     }
 
-    function changeTextSize() {
-        textSize = textSize === 1 ? 1.2 : 1;  // Zwiększ o 0.2 lub wróć do normalnego
-        document.body.style.fontSize = `${textSize}em`;
+    function switchDarkMode() {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('high-contrast');
+    }
+
+    function switchLightMode() {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.remove('high-contrast');
+    }
+
+    function switchHighContrastMode() {
+        document.body.classList.add('high-contrast');
+        document.body.classList.remove('dark-mode');
     }
 </script>
 
