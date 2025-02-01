@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    padding-bottom: 50px; /* Miejsce na stopkę */
+    padding-bottom: 50px;
 }
 
 header {
@@ -45,7 +45,6 @@ p {
     margin-bottom: 15px;
 }
 
-/* Styl dla przycisków obok tytułów rozdziałów */
 .controls {
     display: inline-block;
     margin-left: 15px;
@@ -68,7 +67,6 @@ p {
     margin-bottom: 30px;
 }
 
-/* Styl dla przypiętej stopki na dole */
 .footer {
     position: fixed;
     bottom: 0;
