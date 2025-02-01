@@ -173,8 +173,8 @@
 <!-- Tabela z logotypami -->
 <table>
     <tr>
-        <td><img src="01.png" alt="Logotyp 1" width="100"></td>
-        <td><img src="kolo.png" alt="Logotyp 2" width="100"></td>
+        <td><img src="logotyp1.png" alt="Logotyp 1" width="100"></td>
+        <td><img src="logotyp2.png" alt="Logotyp 2" width="100"></td>
         <td><img src="logotyp3.png" alt="Logotyp 3" width="100"></td>
     </tr>
 </table>
@@ -212,13 +212,8 @@
     
     <br><br>
 
-    <label for="textSize">Rozmiar tekstu:</label>
-    <input type="range" id="textSize" min="1" max="3" step="0.1" value="1.2">
-    <span id="textSizeValue">1.2</span>
+    <button id="textSizeButton" onclick="toggleTextSize()">Zwiększ rozmiar tekstu</button>
     
-    <br><br>
-
-    <button onclick="resetTextSize()">Resetuj rozmiar tekstu</button>
     <br><br>
 
     <button onclick="switchDarkMode()">Tryb ciemny</button>
@@ -236,9 +231,8 @@
     let volume = document.getElementById('volume');
     let rateValue = document.getElementById('rate-value');
     let volumeValue = document.getElementById('volume-value');
-    let textSize = document.getElementById('textSize');
-    let textSizeValue = document.getElementById('textSizeValue');
     let isSpeaking = false;
+    let isTextSizeIncreased = false;  // Nowa zmienna do kontrolowania rozmiaru tekstu
 
     rate.addEventListener('input', function() {
         rateValue.textContent = rate.value;
@@ -287,16 +281,16 @@
         }
     }
 
-    textSize.addEventListener('input', function() {
-        let size = textSize.value;
-        textSizeValue.textContent = size;
-        document.body.style.fontSize = `${size}rem`;
-    });
-
-    function resetTextSize() {
-        document.body.style.fontSize = '1.2rem';
-        textSize.value = 1.2;
-        textSizeValue.textContent = 1.2;
+    // Funkcja do zmiany rozmiaru tekstu
+    function toggleTextSize() {
+        if (isTextSizeIncreased) {
+            document.body.style.fontSize = '1.2rem';  // Przywrócenie oryginalnego rozmiaru
+            document.getElementById('textSizeButton').textContent = 'Zwiększ rozmiar tekstu';
+        } else {
+            document.body.style.fontSize = '1.4rem';  // Zwiększenie rozmiaru o 0.2
+            document.getElementById('textSizeButton').textContent = 'Przywróć rozmiar tekstu';
+        }
+        isTextSizeIncreased = !isTextSizeIncreased;
     }
 
     function switchDarkMode() {
