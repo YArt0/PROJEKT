@@ -47,7 +47,7 @@
         }
 
         h2 {
-            color: black; /* Nagłówek w standardzie czarny */
+            color: #0056b3;
         }
 
         p {
@@ -130,6 +130,7 @@
             background-color: #555;
         }
 
+        /* Tryb wysokiego kontrastu */
         body.high-contrast {
             background-color: #000;
             color: #FFD700;
@@ -163,8 +164,9 @@
             color: #FFD700;
         }
 
+        /* Kolor podtytułów w trybie jasnym */
         body:not(.dark-mode) h2 {
-            color: black; /* Ustawienie koloru nagłówka na czarny w trybie jasnym */
+            color: white;
         }
 
     </style>
@@ -282,16 +284,7 @@
     }
 
     function toggleMode() {
-        const body = document.body;
-        const button = document.querySelector('.controls button:nth-child(3)');
-
-        body.classList.toggle('dark-mode');
-        // Zmiana tekstu przycisku
-        if (body.classList.contains('dark-mode')) {
-            button.textContent = 'Tryb jasny';
-        } else {
-            button.textContent = 'Tryb ciemny';
-        }
+        document.body.classList.toggle('dark-mode');
     }
 
     function toggleHighContrast() {
